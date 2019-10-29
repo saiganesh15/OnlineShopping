@@ -138,7 +138,7 @@ public void testRegistration() throws InterruptedException
 	  ans.sendKeys("Blue");
 	 // Thread.sleep(3000);
 	  p.findElement(By.xpath("/html/body/main/div/div/form/fieldset/div/div[13]/div/input[1]")).click();
-	  
+	  p.close();
 	  
 	  
 }
@@ -146,16 +146,16 @@ public void testRegistration() throws InterruptedException
 public void testLogin() throws InterruptedException
 {
 	logger = extent.createTest("TC_02", "Test Login");
-	// p = Drivers.getDriver("CR");
-	// p.get("http://10.232.237.143:443/TestMeApp/fetchcat.htm");
-	// p.manage().window().maximize();
+	 p = Drivers.getDriver("CR");
+ p.get("http://10.232.237.143:443/TestMeApp/fetchcat.htm");
+	 p.manage().window().maximize();
 		Thread.sleep(3000);
 		WebElement SignLink = p.findElement(By.linkText("SignIn")); //Signin Link
 		SignLink.click();
 		WebElement Uname = p.findElement(By.name("userName")); //Username
-		Uname.sendKeys("playgod123");
+		Uname.sendKeys("lalitha");
 		WebElement Pswd = p.findElement(By.name("password")); //Password
-		Pswd.sendKeys("playgod123");
+		Pswd.sendKeys("password123");
 		WebElement login = p.findElement(By.name("Login"));
 		login.click();
 		Thread.sleep(5000);
